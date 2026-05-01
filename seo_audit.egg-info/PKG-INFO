@@ -1,3 +1,18 @@
+Metadata-Version: 2.4
+Name: seo-audit
+Version: 0.1.0
+Summary: Stage 1 public-data SEO intelligence CLI
+Requires-Python: >=3.11
+Description-Content-Type: text/markdown
+Requires-Dist: duckdb>=1.0
+Requires-Dist: google-auth>=2.35
+Requires-Dist: lxml>=5.2
+Requires-Dist: requests>=2.32
+Provides-Extra: dev
+Requires-Dist: pytest>=8.0; extra == "dev"
+Requires-Dist: ruff>=0.6; extra == "dev"
+Requires-Dist: playwright>=1.48; extra == "dev"
+
 # SEO Audit (Stage 1 MVP)
 
 Public-data-only SEO/site-positioning audit CLI for internal agency use.
@@ -18,7 +33,7 @@ Public-data-only SEO/site-positioning audit CLI for internal agency use.
 - Generates explainable issues + heuristic scores with separated preview-control and structured-data-validity dimensions.
 - Persists additive score explainability metadata (`scoring_model_version`, `scoring_profile`, `score_explanation_json`) while retaining legacy aliases (`score_version`, `score_profile`, `explanation_json`) for backward-compatible runs and dashboard drill-down.
 - Optionally collects PSI and CrUX public metrics.
-- Optionally runs a concurrent Common Crawl offsite lane (ranks/domains, verify deferred behind experimental flag) with release-scoped cache and bounded default scheduling.
+- Optionally runs a background Common Crawl offsite lane (ranks/domains/verify-deferred) with release-scoped cache and non-blocking default scheduling.
 - Enforces provider key-required behavior in PSI/CrUX runtime paths.
 - Applies bounded provider retry/backoff with `Retry-After` support.
 - Stores raw provider payloads only when explicitly enabled.
@@ -104,8 +119,8 @@ python -m seo_audit dashboard --db ./out/audit.sqlite --host 127.0.0.1 --port 87
 ### Offsite Common Crawl lane (additive)
 - Opt-in controls:
 	- `--offsite-commoncrawl-enabled|--offsite-commoncrawl-disabled`
-	- `--offsite-commoncrawl-mode ranks|domains`
-	- `--offsite-commoncrawl-schedule concurrent_best_effort|background_wait|blocking`
+	- `--offsite-commoncrawl-mode ranks|domains|verify`
+	- `--offsite-commoncrawl-schedule background_best_effort|background_wait|blocking`
 	- `--offsite-commoncrawl-release` (default `auto`)
 	- `--offsite-commoncrawl-cache-dir` (default `~/.cache/seo_audit/commoncrawl`)
 	- `--offsite-commoncrawl-max-linking-domains`
@@ -113,16 +128,15 @@ python -m seo_audit dashboard --db ./out/audit.sqlite --host 127.0.0.1 --port 87
 	- `--offsite-commoncrawl-time-budget-seconds`
 	- `--offsite-commoncrawl-allow-cold-edge-download`
 	- `--offsite-compare-domain` (repeatable)
-	- `--offsite-commoncrawl-experimental-verify` (hidden/experimental gate)
 - Scheduling semantics:
-	- `concurrent_best_effort`: runs concurrently during this audit process only; tiny end-join budget persists deferred/pending when unfinished.
+	- `background_best_effort`: starts early, tiny end-join budget, persists deferred/pending when unfinished.
 	- `background_wait`: bounded end-join wait.
 	- `blocking`: explicit full-wait power-user mode.
 - Domain-mode cold-cache behavior:
 	- warm edge cache => full linking-domain discovery,
 	- cold edge cache without opt-in => clean `skipped_cold_edge_cache` result,
-	- cold edge cache with opt-in => concurrent edge download/work during the same run.
-- `verify` mode currently returns `deferred_verify_not_implemented` (page-level proof remains a later bounded feature and is hidden behind an experimental flag).
+	- cold edge cache with opt-in => background edge download/work.
+- `verify` mode currently returns `deferred_verify_not_implemented` (page-level proof is a later bounded feature).
 
 ### JS-rendered site handling
 - Crawl keeps a two-step model:
@@ -159,7 +173,6 @@ In output directory:
 - `run_events.csv`
 - `offsite_commoncrawl_summary.csv`
 - `offsite_commoncrawl_linking_domains.csv`
-- `offsite_commoncrawl_comparisons.csv`
 - `offsite_commoncrawl_competitors.csv`
 - `report.md`
 

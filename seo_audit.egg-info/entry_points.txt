@@ -1,0 +1,2 @@
+[console_scripts]
+seo-audit = seo_audit.cli:main

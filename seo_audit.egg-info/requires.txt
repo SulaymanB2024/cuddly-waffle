@@ -1,0 +1,9 @@
+duckdb>=1.0
+google-auth>=2.35
+lxml>=5.2
+requests>=2.32
+
+[dev]
+pytest>=8.0
+ruff>=0.6
+playwright>=1.48

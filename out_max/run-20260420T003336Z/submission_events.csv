@@ -1,0 +1,2 @@
+submission_event_id,run_id,url,engine,action,status,payload_json
+1,3c174164-cb26-4fb2-adad-387bab3dda2b,https://void-agency.com/,google,url_inspection,skipped_disabled,"{""property_candidates"": [""sc-domain:void-agency.com"", ""https://void-agency.com/"", ""https://www.void-agency.com/""]}"

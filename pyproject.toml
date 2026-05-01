@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "seo-audit"
+version = "0.1.0"
+description = "Stage 1 public-data SEO intelligence CLI"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+  "duckdb>=1.0",
+  "google-auth>=2.35",
+  "lxml>=5.2",
+  "requests>=2.32",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8.0",
+  "ruff>=0.6",
+  "playwright>=1.48"
+]
+
+[project.scripts]
+seo-audit = "seo_audit.cli:main"
+
+[tool.setuptools]
+packages = ["seo_audit"]
+
+[tool.pytest.ini_options]
+addopts = "-q"
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100

@@ -1,0 +1,101 @@
+{
+  "version": "2026.04.17",
+  "rules": [
+    {
+      "engine": "google",
+      "type": "Article",
+      "feature_family": "article_rich_results",
+      "status": "supported",
+      "required_fields": ["headline"],
+      "recommended_fields": ["author", "datePublished", "image"],
+      "visibility_requirements": ["headline"],
+      "page_type_allowlist": ["article", "blog", "homepage", "other"],
+      "docs_url": "https://developers.google.com/search/docs/appearance/structured-data/article",
+      "last_reviewed_at": "2026-04-17"
+    },
+    {
+      "engine": "google",
+      "type": "BlogPosting",
+      "feature_family": "article_rich_results",
+      "status": "supported",
+      "required_fields": ["headline"],
+      "recommended_fields": ["author", "datePublished", "image"],
+      "visibility_requirements": ["headline"],
+      "page_type_allowlist": ["article", "blog", "homepage", "other"],
+      "docs_url": "https://developers.google.com/search/docs/appearance/structured-data/article",
+      "last_reviewed_at": "2026-04-17"
+    },
+    {
+      "engine": "google",
+      "type": "Product",
+      "feature_family": "product_rich_results",
+      "status": "supported",
+      "required_fields": ["name"],
+      "recommended_fields": ["offers", "image", "brand"],
+      "visibility_requirements": ["name"],
+      "page_type_allowlist": ["product", "service", "location", "other"],
+      "docs_url": "https://developers.google.com/search/docs/appearance/structured-data/product",
+      "last_reviewed_at": "2026-04-17"
+    },
+    {
+      "engine": "google",
+      "type": "LocalBusiness",
+      "feature_family": "local_business_knowledge",
+      "status": "supported",
+      "required_fields": ["name", "address"],
+      "recommended_fields": ["telephone", "url", "openingHoursSpecification"],
+      "visibility_requirements": ["name"],
+      "page_type_allowlist": ["homepage", "location", "service", "contact"],
+      "docs_url": "https://developers.google.com/search/docs/appearance/structured-data/local-business",
+      "last_reviewed_at": "2026-04-17"
+    },
+    {
+      "engine": "google",
+      "type": "VideoObject",
+      "feature_family": "video_rich_results",
+      "status": "supported",
+      "required_fields": ["name", "thumbnailUrl"],
+      "recommended_fields": ["uploadDate", "description", "embedUrl", "contentUrl"],
+      "visibility_requirements": ["name"],
+      "page_type_allowlist": ["article", "blog", "other"],
+      "docs_url": "https://developers.google.com/search/docs/appearance/structured-data/video",
+      "last_reviewed_at": "2026-04-17"
+    },
+    {
+      "engine": "google",
+      "type": "Organization",
+      "feature_family": "organization_knowledge",
+      "status": "limited",
+      "required_fields": ["name"],
+      "recommended_fields": ["url", "sameAs", "logo"],
+      "visibility_requirements": ["name"],
+      "page_type_allowlist": ["homepage", "about", "contact", "other"],
+      "docs_url": "https://developers.google.com/search/docs/appearance/structured-data/organization",
+      "last_reviewed_at": "2026-04-17"
+    },
+    {
+      "engine": "google",
+      "type": "WebPage",
+      "feature_family": "webpage_markup",
+      "status": "other_surface_only",
+      "required_fields": ["name"],
+      "recommended_fields": ["description"],
+      "visibility_requirements": ["name"],
+      "page_type_allowlist": ["homepage", "other"],
+      "docs_url": "https://schema.org/WebPage",
+      "last_reviewed_at": "2026-04-17"
+    },
+    {
+      "engine": "google",
+      "type": "DataVocabulary",
+      "feature_family": "legacy_vocab",
+      "status": "deprecated",
+      "required_fields": [],
+      "recommended_fields": [],
+      "visibility_requirements": [],
+      "page_type_allowlist": ["other"],
+      "docs_url": "https://developers.google.com/search/blog/2020/01/data-vocabulary",
+      "last_reviewed_at": "2026-04-17"
+    }
+  ]
+}

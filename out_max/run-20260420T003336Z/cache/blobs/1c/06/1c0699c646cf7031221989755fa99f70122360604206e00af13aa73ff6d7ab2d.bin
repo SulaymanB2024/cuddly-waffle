@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
+    <meta name="theme-color" content="#000000" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="format-detection" content="telephone=yes" />
+
+    <!-- Robots: allow rich snippets and large image previews -->
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+
+    <!-- Local SEO geo signals for Austin, TX -->
+    <meta name="geo.region" content="US-TX" />
+    <meta name="geo.placename" content="Austin, Texas" />
+    <meta name="geo.position" content="30.2672;-97.7431" />
+    <meta name="ICBM" content="30.2672, -97.7431" />
+    
+    <!-- Favicon & App Icons -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="mask-icon" href="/favicon.svg" color="#000000" />
+    <meta name="msapplication-TileColor" content="#000000" />
+    <meta name="msapplication-TileImage" content="/apple-touch-icon.png" />
+
+    <!-- Fonts -->
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Manrope:wght@300;400;500;600&family=Space+Grotesk:wght@400;500&display=swap" rel="stylesheet">
+
+    <meta name="description" content="VOID Agency builds high-performance websites and demand generation systems for growing businesses. Turn traffic into pipeline — fast." />
+    
+    <!-- Open Graph — renders in iMessage, Slack, LinkedIn, Twitter previews -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://void-agency.com/" />
+    <meta property="og:title" content="VOID Agency — Websites & Growth Systems That Convert" />
+    <meta property="og:description" content="High-performance websites and demand generation for growing businesses. Turn traffic into pipeline — fast." />
+    <meta property="og:image" content="https://void-agency.com/og-image.jpg" />
+    <meta property="og:image:secure_url" content="https://void-agency.com/og-image.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:alt" content="VOID Agency — Websites & Growth Systems That Convert" />
+    <meta property="og:site_name" content="VOID Agency" />
+    <meta property="og:locale" content="en_US" />
+    
+    <!-- Twitter / X Card — also used by iMessage on some iOS versions -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://void-agency.com/" />
+    <meta name="twitter:title" content="VOID Agency — Websites & Growth Systems That Convert" />
+    <meta name="twitter:description" content="High-performance websites and demand generation for growing businesses. Turn traffic into pipeline — fast." />
+    <meta name="twitter:image" content="https://void-agency.com/og-image.jpg" />
+    <meta name="twitter:image:alt" content="VOID Agency — Websites & Growth Systems That Convert" />
+    <meta name="twitter:site" content="@voidconsulting" />
+    <meta name="twitter:creator" content="@voidconsulting" />
+    
+    <!-- Additional SEO Meta Tags -->
+    <meta name="author" content="VOID Agency" />
+    <meta name="keywords" content="website design Austin TX, growth consulting, demand generation, local SEO, SMB website design, lead generation, conversion-focused website" />
+    <meta name="category" content="Growth Consulting, Website Design, Demand Generation" />
+    <meta name="rating" content="general" />
+    <link rel="canonical" href="https://void-agency.com/smbs" />
+    <link rel="alternate" hreflang="en" href="https://void-agency.com/" />
+    <link rel="alternate" hreflang="en-us" href="https://void-agency.com/" />
+    
+    <title>VOID Agency — Websites & Growth Systems That Convert</title>
+    
+    <!-- Delay Loading 3rd Party Scripts -->
+    <script>
+      function load3rdPartyScripts() {
+        // GTM
+        var gtmScript = document.createElement('script');
+        gtmScript.src = "https://www.googletagmanager.com/gtag/js?id=G-MQKR22X3P8";
+        gtmScript.async = true;
+        document.head.appendChild(gtmScript);
+        
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-MQKR22X3P8');
+
+        // Apollo Tracking
+        var n=Math.random().toString(36).substring(7);
+        var o=document.createElement("script");
+        o.src="https://assets.apollo.io/micro/website-tracker/tracker.iife.js?nocache="+n;
+        o.async=true;
+        o.defer=true;
+        o.onload=function(){window.trackingFunctions && window.trackingFunctions.onLoad({appId:"696f0f68f61150001d19ad7c"})};
+        document.head.appendChild(o);
+      }
+
+      // Load scripts safely after window load
+      if (document.readyState === 'complete') {
+        setTimeout(load3rdPartyScripts, 500);
+      } else {
+        window.addEventListener('load', function() {
+          setTimeout(load3rdPartyScripts, 500);
+        });
+      }
+    </script>
+    <script type="module" crossorigin src="/assets/index-CMuSINHA.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-DjA6WMUB.css">
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+  </body>
+</html>
